@@ -37,6 +37,7 @@ import {
 import InputModal from "@/components/ModalContents/InputModal";
 import { Modal, DetailContent } from "@/components/common/ModalPopup";
 import EditCardModal from "@/components/ModalContents/EditCardModal";
+import SideMenu from "@/components/common/SideMenu";
 
 export default function Dashboard() {
   const [activeCard, setActiveCard] = useState<Card | null>(null);
@@ -193,7 +194,8 @@ export default function Dashboard() {
   }, [states.isCreateCardModalOpen]);
 
   return (
-    <>
+    <div className="ml-[67px] tablet:ml-[160px] laptop:ml-[300px]">
+      <SideMenu />
       <Header />
       <div className="flex desktop:flex-row flex-col desktop:items-start items-center tablet:h-[calc(100dvh_-_70px)] h-[calc(100dvh_-_60px)] w-full desktop:overflow-x-auto">
         <DndContext
@@ -360,6 +362,6 @@ export default function Dashboard() {
           }}
         />
       </div>
-    </>
+    </div>
   );
 }
